@@ -1,0 +1,37 @@
+Код выведет последовательно следующие строки:
+Bad: 10
+Bad: 12
+Good: 15
+Good: 21
+
+Первый вариант модификации
+
+const arr = [10, 12, 15, 21];
+
+const result = [];
+
+for( let i = 0; i < arr.length; i++ ) {
+    if (arr[i] > 13) {
+        result.push(`Good: ${arr[i]}`);
+    } else {
+        result.push(`Bad: ${arr[i]}`);
+    }
+}
+
+setTimeout(function() {
+    console.log(result.join(', '));
+}, 3000)
+
+
+Второй вариант модификации
+const arr = [10, 12, 15, 21];
+
+let str = '';
+
+for( let i = 0; i < arr.length; i++ ) {
+   arr[i] > 13 ? str = str + `Good: ${arr[i]}, ` : str = str + `Bad: ${arr[i]}, `;
+}
+
+setTimeout(function() {
+    console.log(str.slice(0, -2));
+}, 3000)
