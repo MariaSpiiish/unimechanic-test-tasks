@@ -1,0 +1,11 @@
+.popup__close-button {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #0848C0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.button {
+    height: 48px;
+    width: 147px;
+    border: 1px solid #E5266E;
+    border-radius: 4px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-align: center;
+    color: #E5266E;
+    background-color: #FFF;
+    margin-top: 20px;
+}
+
+.button:hover {
+    cursor: pointer;
+}

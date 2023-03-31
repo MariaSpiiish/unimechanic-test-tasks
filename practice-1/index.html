@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become partner Form</title>
+  </head>
+  <body>
+    <div class="page">
+        <main class="content">
+            <button class="button">Форма</button>
+        </main>
+
+        <div class="popup">
+            <div class="popup__container">
+                <h2 class="popup__title">Стать партнёром проекта</h2>
+                <form id="form" class="form" novalidate>
+
+                  <div class="popup__profile-container">
+
+                    <div class="popup__info">
+                      <div class="popup__input-container">
+                        <input 
+                          name="company"
+                          id="company-input"
+                          type="text"
+                          required
+                          class="popup__input popup__input_type_short popup__input_type_name"
+                        />
+                        <label class="popup__label" for="company-input"><span style="color: #D90000">&#10033;</span> Название организации</label>
+                        <span id="name-error" class="name-input-error popup__error"></span>
+                      </div>
+
+                      <div class="popup__input-container">
+                        <input 
+                          name="phone"
+                          id="phone-input"
+                          type="tel"
+                          required
+                          class="popup__input popup__input_type_short popup__input_type_phone"
+                        />
+                        <label class="popup__label" for="phone-input"><span style="color: #D90000">&#10033;</span> Телефон</label>
+                        <span id="phone-error" class="phone-input-error popup__error"></span>
+                      </div>
+
+                      <div class="popup__input-container">
+                        <input 
+                          name="email"
+                          id="email-input"
+                          type="email"
+                          required
+                          class="popup__input popup__input_type_short popup__input_type_email"
+                        />
+                        <label class="popup__label" for="email-input"><span style="color: #D90000">&#10033;</span> E-mail</label>
+                        <span id="email-error" class="email-input-error popup__error"></span>
+                      </div>
+                    </div>
+
+                    <div class="popup__logo">
+                      <label class="popup__label_type_logo" for="file-input"><span style="color: #D90000">&#10033;</span> Логотип (jpeg, png)</label>
+                      <input 
+                          name="logo"
+                          id="file-input"
+                          type="file"
+                          required
+                          class="popup__input_type_file"
+                          accept=".jpg, .jpeg, .png"
+                        />
+                      <label class="popup__file-input-label" for="file-input">
+                        <button type="button" class="popup__avatar-delete-button"></button>
+                        <img src="./images/load-icon.svg">
+                        <span class="popup__file-input-span">Выберите <br> файл</span>
+                      </label>
+                      <span id="email-error" class="email-input-error popup__error"></span>
+                    </div>
+                  </div>
+                  
+
+                  <div class="popup__input-container">
+                    <input 
+                      type="text"
+                      list="direction"
+                      id="direction-input"
+                      name="direction"
+                      required
+                      class="popup__input popup__input_type_long popup__input_type_direction"
+                      style="background: url(./images/icon-color.svg); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                    />
+                    <label class="popup__label" for="direction-input"><span style="color: #D90000">&#10033;</span> Направление</label>
+                    <datalist id="direction">
+                      <option class="popup__input-option" value="Направление 1"></option>
+                      <option class="popup__input-option" value="Направление 2"></option>
+                      <option class="popup__input-option" value="Направление 3"></option>
+                      <option class="popup__input-option" value="Направление 4"></option>
+                      <option class="popup__input-option" value="Направление 5"></option>
+                    </datalist>
+                    <span id="direction-error" class="direction-input-error popup__error"></span>
+                  </div>
+
+                  <input 
+                    name="url"
+                    id="url-input"
+                    type="url"
+                    placeholder="url" 
+                    class="popup__input popup__input_type_long popup__input_type_url"
+                    style="background: url(./images/global.svg); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                  />
+                  <span id="url-error" class="url-input-error popup__error"></span>
+                  
+                  <input 
+                    name="vk"
+                    id="vk-input"
+                    type="url"
+                    placeholder="vk.com/shans" 
+                    class="popup__input popup__input_type_long popup__input_type_vk"
+                    style="background: url(./images/vk.png); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                  />
+                  <span id="vk-error" class="vk-input-error popup__error"></span>
+                  
+                  <input 
+                    name="ok"
+                    id="ok-input"
+                    type="url"
+                    placeholder="ok.com/shans" 
+                    class="popup__input popup__input_type_long popup__input_type_ok"
+                    style="background: url(./images/ok.png); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                  />
+                  <span id="ok-error" class="ok-input-error popup__error"></span>
+                  
+                  <input 
+                    name="fb"
+                    id="fb-input"
+                    type="url"
+                    placeholder="facebook.com/shans" 
+                    class="popup__input popup__input_type_long popup__input_type_fb"
+                    style="background: url(./images/facebook.svg); background-position: bottom 50% right 23px; background-repeat: no-repeat;"
+                  />
+                  <span id="fb-error" class="fb-input-error popup__error"></span>
+                  
+                  <input 
+                    name="inst"
+                    id="inst-input"
+                    type="url"
+                    placeholder="instagram.com/shans" 
+                    class="popup__input popup__input_type_long popup__input_type_inst"
+                    style="background: url(./images/instagram-2016-5.svg); background-position: bottom 50% right 17px; background-repeat: no-repeat;"
+                  />
+                  <span id="inst-error" class="inst-input-error popup__error"></span>
+                  
+                  <input 
+                    name="youtube"
+                    id="youtube-input"
+                    type="url"
+                    placeholder="youtube.com/shans" 
+                    class="popup__input popup__input_type_long popup__input_type_youtube"
+                    style="background: url(./images/youtube.svg); background-position: bottom 50% right 15px; background-repeat: no-repeat;"
+                  />
+                  <span id="youtube-error" class="youtube-input-error popup__error"></span>
+                  
+                  <div class="popup__input-container">
+                    <input 
+                      name="name"
+                      id="name-input"
+                      type="text"
+                      minlength="2"
+                      required
+                      class="popup__input popup__input_type_long popup__input_type_name"
+                    />
+                    <label class="popup__label" for="name-input"> Руководитель</label>
+                    <span id="name-error" class="name-input-error popup__error"></span>
+                  </div>
+                    
+                  <div class="popup__button-container">
+                    <button type="submit" class="popup__submit-button opacity">Стать партнёром проекта</button>
+                    <button type="button" class="popup__close-button opacity">Отменить</button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>

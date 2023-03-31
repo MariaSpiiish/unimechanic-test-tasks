@@ -1,0 +1,13 @@
+.popup__file-input-label {
+    background-image: url(../../../images/Ellipse\ 44.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 163px 163px;
+    width: 163px;
+    height: 163px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}

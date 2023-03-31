@@ -1,0 +1,23 @@
+.popup__label {
+    display: block;
+    color: #6A6E72;
+    -webkit-transition: .2s;
+    transition: .2s;
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: text;
+    position: absolute;
+    left: 16px;
+    top: 25%;
+    background-color: #FFF;
+
+}
+
+.form input:valid + label,
+.form input:focus + label {
+  top: 8px;
+  font-size: 12px;
+}

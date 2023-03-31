@@ -1,0 +1,11 @@
+.popup__file-input-span {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.6667px;
+    line-height: 28px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    cursor: pointer;
+}

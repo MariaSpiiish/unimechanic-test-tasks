@@ -1,0 +1,14 @@
+.popup__avatar-delete-button {
+    background-color: #fff;
+    background-image: url(../../../images/delete-button.svg);
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
