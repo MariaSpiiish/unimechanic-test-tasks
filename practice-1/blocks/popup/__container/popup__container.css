@@ -9,8 +9,20 @@
     justify-content: left;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .popup__container {
-        max-width: 282px;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 550px) {
+    .popup__container {
+        max-width: 340px;
+    }
+}
+
+@media (max-width: 340px) {
+    .popup__container {
+        max-width: 284px;
     }
 }

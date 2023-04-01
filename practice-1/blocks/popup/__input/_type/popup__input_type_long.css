@@ -1,3 +1,15 @@
 .popup__input_type_long {
     width: 558px;
 }
+
+@media (max-width: 900px) {
+    .popup__input_type_long {
+        width: 362px;
+    }
+}
+
+@media (max-width: 550px) {
+    .popup__input_type_long {
+        width: 238px;
+    }
+}

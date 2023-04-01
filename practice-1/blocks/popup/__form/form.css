@@ -1,5 +1,15 @@
 .form {
     margin: 35px 98px 53px;
-    
+}
 
+@media (max-width: 900px) {
+    .form {
+        margin: 35px 50px 53px;
+    }
+}
+
+@media (max-width: 340px) {
+    .form {
+        margin: 35px 12px 53px;
+    }
 }

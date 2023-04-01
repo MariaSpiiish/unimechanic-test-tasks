@@ -5,10 +5,11 @@
     margin: 53px auto 0 97px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 550px) {
     .popup__title {
         font-size: 18px;
         padding: 25px 22px 0;
         margin: 0 auto;
+        text-align: center;
     }
 }

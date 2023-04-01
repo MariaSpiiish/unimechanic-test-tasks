@@ -17,3 +17,9 @@
 .button:hover {
     cursor: pointer;
 }
+
+@media (max-width: 900px) {
+    .button {
+        margin-left: 40px;
+    }
+}

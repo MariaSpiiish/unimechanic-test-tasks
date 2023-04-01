@@ -3,7 +3,6 @@
     border: 1px solid #D6DADE;
     border-radius: 2px;
     padding-left: 16px;
-    width: 362px;
     height: 56px;
     outline: none;
     font-family: 'PT Sans';
@@ -15,9 +14,8 @@
 }
 
 .popup__input::-webkit-calendar-picker-indicator {
-    
     visibility: hidden;
- }
+}
 
 .popup__input::placeholder {
     font-family: 'PT Sans';
@@ -37,9 +35,9 @@
     color: #6A6E72;
 } 
 
-@media (max-width: 320px) {
+@media (max-width: 550px) {
     .popup__input {
-        margin: 75px 22px 0;
+        /* margin: 75px 22px 0; */
         max-width: 238px;
     }
 }
