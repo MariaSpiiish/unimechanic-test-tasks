@@ -29,7 +29,7 @@
                           class="popup__input popup__input_type_short popup__input_type_name"
                         />
                         <label class="popup__label" for="company-input"><span style="color: #D90000">&#10033;</span> Название организации</label>
-                        <span id="name-error" class="name-input-error popup__error"></span>
+                        <span id="name-error" class="company-input-error popup__error"></span>
                       </div>
 
                       <div class="popup__input-container">
@@ -72,7 +72,7 @@
                         <img src="./images/load-icon.svg">
                         <span class="popup__file-input-span">Выберите <br> файл</span>
                       </label>
-                      <span id="email-error" class="email-input-error popup__error"></span>
+                      <span id="file-error" class="file-input-error popup__error"></span>
                     </div>
                   </div>
                   
@@ -98,67 +98,80 @@
                     <span id="direction-error" class="direction-input-error popup__error"></span>
                   </div>
 
-                  <input 
-                    name="url"
-                    id="url-input"
-                    type="url"
-                    placeholder="url" 
-                    class="popup__input popup__input_type_long popup__input_type_url"
-                    style="background: url(./images/global.svg); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
-                  />
-                  <span id="url-error" class="url-input-error popup__error"></span>
-                  
-                  <input 
-                    name="vk"
-                    id="vk-input"
-                    type="url"
-                    placeholder="vk.com/shans" 
-                    class="popup__input popup__input_type_long popup__input_type_vk"
-                    style="background: url(./images/vk.png); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
-                  />
-                  <span id="vk-error" class="vk-input-error popup__error"></span>
-                  
-                  <input 
-                    name="ok"
-                    id="ok-input"
-                    type="url"
-                    placeholder="ok.com/shans" 
-                    class="popup__input popup__input_type_long popup__input_type_ok"
-                    style="background: url(./images/ok.png); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
-                  />
-                  <span id="ok-error" class="ok-input-error popup__error"></span>
-                  
-                  <input 
-                    name="fb"
-                    id="fb-input"
-                    type="url"
-                    placeholder="facebook.com/shans" 
-                    class="popup__input popup__input_type_long popup__input_type_fb"
-                    style="background: url(./images/facebook.svg); background-position: bottom 50% right 23px; background-repeat: no-repeat;"
-                  />
-                  <span id="fb-error" class="fb-input-error popup__error"></span>
-                  
-                  <input 
-                    name="inst"
-                    id="inst-input"
-                    type="url"
-                    placeholder="instagram.com/shans" 
-                    class="popup__input popup__input_type_long popup__input_type_inst"
-                    style="background: url(./images/instagram-2016-5.svg); background-position: bottom 50% right 17px; background-repeat: no-repeat;"
-                  />
-                  <span id="inst-error" class="inst-input-error popup__error"></span>
-                  
-                  <input 
-                    name="youtube"
-                    id="youtube-input"
-                    type="url"
-                    placeholder="youtube.com/shans" 
-                    class="popup__input popup__input_type_long popup__input_type_youtube"
-                    style="background: url(./images/youtube.svg); background-position: bottom 50% right 15px; background-repeat: no-repeat;"
-                  />
-                  <span id="youtube-error" class="youtube-input-error popup__error"></span>
+                  <div class="popup__input-container">
+                    <span id="url-error" class="url-input-error popup__error"></span>
+                    <input 
+                      name="url"
+                      id="url-input"
+                      type="url"
+                      placeholder="url" 
+                      class="popup__input popup__input_type_long popup__input_type_url"
+                      style="background: url(./images/global.svg); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                    />
+                  </div>
                   
                   <div class="popup__input-container">
+                    <span id="vk-error" class="vk-input-error popup__error"></span>
+                    <input 
+                      name="vk"
+                      id="vk-input"
+                      type="url"
+                      placeholder="vk.com/shans" 
+                      class="popup__input popup__input_type_long popup__input_type_vk"
+                      style="background: url(./images/vk.png); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                    />
+                  </div>
+                  
+                  <div class="popup__input-container">
+                    <span id="ok-error" class="ok-input-error popup__error"></span>
+                    <input 
+                      name="ok"
+                      id="ok-input"
+                      type="url"
+                      placeholder="ok.com/shans" 
+                      class="popup__input popup__input_type_long popup__input_type_ok"
+                      style="background: url(./images/ok.png); background-position: bottom 50% right 19px; background-repeat: no-repeat;"
+                    />
+                  </div>
+                  
+                  <div class="popup__input-container">
+                    <span id="fb-error" class="fb-input-error popup__error"></span>
+                    <input 
+                      name="fb"
+                      id="fb-input"
+                      type="url"
+                      placeholder="facebook.com/shans" 
+                      class="popup__input popup__input_type_long popup__input_type_fb"
+                      style="background: url(./images/facebook.svg); background-position: bottom 50% right 23px; background-repeat: no-repeat;"
+                    />
+                  </div>
+                  
+                  <div class="popup__input-container">
+                    <span id="inst-error" class="inst-input-error popup__error"></span>
+                    <input 
+                      name="inst"
+                      id="inst-input"
+                      type="url"
+                      placeholder="instagram.com/shans" 
+                      class="popup__input popup__input_type_long popup__input_type_inst"
+                      style="background: url(./images/instagram-2016-5.svg); background-position: bottom 50% right 17px; background-repeat: no-repeat;"
+                    />
+                  </div>
+                  
+                  <div class="popup__input-container">
+                    <span id="youtube-error" class="youtube-input-error popup__error"></span>
+                    <input 
+                      name="youtube"
+                      id="youtube-input"
+                      type="url"
+                      placeholder="youtube.com/shans" 
+                      class="popup__input popup__input_type_long popup__input_type_youtube"
+                      style="background: url(./images/youtube.svg); background-position: bottom 50% right 15px; background-repeat: no-repeat;"
+                    />
+                  </div>
+                  
+                  <div class="popup__input-container">
+                    <span id="name-error" class="name-input-error popup__error"></span>
                     <input 
                       name="name"
                       id="name-input"
@@ -168,7 +181,6 @@
                       class="popup__input popup__input_type_long popup__input_type_name"
                     />
                     <label class="popup__label" for="name-input"> Руководитель</label>
-                    <span id="name-error" class="name-input-error popup__error"></span>
                   </div>
                     
                   <div class="popup__button-container">
