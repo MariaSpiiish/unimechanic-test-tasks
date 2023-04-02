@@ -2,28 +2,42 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Become partner Form</title>
   </head>
   <body>
-    <table class="table">
-        <thead class="table__head">
-            <tr>
-                <th class="table__item">UserId</th>
-                <th class="table__item">Title</th>
-                <th class="table__item">Body</th>
-            </tr>
-        </thead>
-        <tbody class="table__body"></tbody>
-    </table>
+    <div class="page">
+      <div>
+        <form class="search">
+            <input
+                class="search__input"
+                type="text"
+                id="search"
+            />
+            <button class="search__button">&#128269;</button>
+        </form>
+      </div>
 
-    <template id="row-template" class="row-template">
-        <tr class="table__row">
-            <td class="table__item table__item_type_user"></td>
-            <td class="table__item table__item_type_title"></td>
-            <td class="table__item table__item_type_body"></td>
-        </tr>
-    </template>
+      <table class="table">
+          <thead class="table__head">
+              <tr>
+                  <th class="table__item">UserId<button class="table__sort-button">&#709;</button></th>
+                  <th class="table__item">Title<button class="table__sort-button">&#709;</button></th>
+                  <th class="table__item">Body<button class="table__sort-button">&#709;</button></th>
+              </tr>
+          </thead>
+          <tbody class="table__body"></tbody>
+      </table>
+
+      <template id="row-template" class="row-template">
+          <tr class="table__row">
+              <td class="table__item table__item_type_user"></td>
+              <td class="table__item table__item_type_title"></td>
+              <td class="table__item table__item_type_body"></td>
+          </tr>
+      </template>
+    </div>
 
     <script type="module" src="./index.js"></script>
   </body>

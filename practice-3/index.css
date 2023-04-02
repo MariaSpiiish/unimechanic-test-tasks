@@ -1,0 +1,7 @@
+@import url(./blocks/page/page.css);
+@import url(./blocks/table/table.css);
+@import url(./blocks/search/search.css);
+@import url(./blocks/search/__input/search__input.css);
+@import url(./blocks/search/__button/search__button.css);
+@import url(./blocks/table/__sort-button/table__sort-button.css);
+@import url(./blocks/table/__item/table__item.css);
