@@ -1,7 +1,6 @@
 export default class Api {
   constructor(options) {
       this.url = options.url;
-      this.headers = options.headers;
   }
 
   _handleResponse(res) {
@@ -12,9 +11,7 @@ export default class Api {
   }
 
   getInfo() {
-      return fetch(this.url, {
-          headers: this.headers
-        })
+      return fetch(this.url)
           .then(this._handleResponse)
   }
 }
