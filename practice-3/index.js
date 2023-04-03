@@ -40,6 +40,14 @@ const bodyButton = document.querySelector('.table__sort-button_type_body');
 
 let order = "asc";
 
+function toggleSortBtn(className) {
+    if (order === 'asc') {
+        className.classList.add('table__sort-button_type_reverse');
+    } else {
+        className.classList.remove('table__sort-button_type_reverse');
+    }
+}
+
 userIdButton.addEventListener('click', () => {
     sortTable(0, true, order);
     toggleSortBtn(userIdButton);
@@ -54,14 +62,6 @@ bodyButton.addEventListener('click', () => {
     sortTable(2, false, order);
     toggleSortBtn(bodyButton);
 });
-
-function toggleSortBtn(className) {
-    if (order === 'asc') {
-        className.classList.add('table__sort-button_type_reverse');
-    } else {
-        className.classList.remove('table__sort-button_type_reverse');
-    }
-}
 
 function sortTable(columnIndex, isNumeric, sortOrder) {
     const tBody = document.querySelector('.table__body');
