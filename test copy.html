@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sortable Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      th {
+        cursor: pointer;
+      }
+      
+      .highlight {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="table">
+      <thead>
+        <tr>
+          <th id="userId">User ID</th>
+          <th id="id">ID</th>
+          <th id="title">Title</th>
+          <th id="body">Body</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <script>
+      // Define a function to create a table row
+      function createTableRow(data) {
+        const tr = document.createElement('tr');
+        const userIdTd = document.createElement('td');
+        const idTd = document.createElement('td');
+        const titleTd = document.createElement('td');
+        const bodyTd = document.createElement('td');
+        
+        userIdTd.textContent = data.userId;
+        idTd.textContent = data.id;
+        titleTd.textContent = data.title;
+        bodyTd.textContent = data.body;
+        
+        tr.appendChild(userIdTd);
+        tr.appendChild(idTd);
+        tr.appendChild(titleTd);
+        tr.appendChild(bodyTd);
+        
+        return tr;
+      }
+      
+      // Define a function to sort the table rows by column
+      function sortTable(column) {
+        const tbody = document.querySelector('#tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        
+        rows.sort((a, b) => {
+          const aText = a.querySelector(`td:nth-child(${column})`).textContent;
+          const bText = b.querySelector(`td:nth-child(${column})`).textContent;
+          if (column === 1 || column === 2) {
+            return parseInt(aText) - parseInt(bText);
+          } else {
+            return aText.localeCompare(bText);
+          }
+        });
+        
+        tbody.innerHTML = '';
+        rows.forEach(row => tbody.appendChild(row));
+      }
+      
+      // Add click listeners to column headers to sort the table
+      document.querySelector('#userId').addEventListener('click', () => sortTable(1));
+      document.querySelector('#id').addEventListener('click', () => sortTable(2));
+      document.querySelector('#title').addEventListener('click', () => sortTable(3));
+      document.querySelector('#body').addEventListener('click', () => sortTable(4));
+      
+      // Fetch data from the API and generate the table
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(response => response.json())
+        .then(data => {
+          const tbody = document.querySelector('#tbody');
+          data.forEach(item => {
+            const tr = createTableRow(item);
+            tbody.appendChild(tr);
+          });
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    </script>
+  </body>
+</html>

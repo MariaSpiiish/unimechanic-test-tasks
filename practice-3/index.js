@@ -33,3 +33,60 @@ api.getInfo()
     .catch((err) => {
         console.log(`Ошибка загрузки данных: ${err}`);
     });
+
+const userIdButton = document.querySelector('.table__sort-button_type_userId');
+const titleButton = document.querySelector('.table__sort-button_type_title');
+const bodyButton = document.querySelector('.table__sort-button_type_body');
+
+let order = "asc";
+
+userIdButton.addEventListener('click', () => {
+    sortTable(0, true, order);
+    toggleSortBtn(userIdButton);
+});
+
+titleButton.addEventListener('click', () => {
+    sortTable(1, false, order);
+    toggleSortBtn(titleButton);
+});
+
+bodyButton.addEventListener('click', () => {
+    sortTable(2, false, order);
+    toggleSortBtn(bodyButton);
+});
+
+function toggleSortBtn(className) {
+    if (order === 'asc') {
+        className.classList.add('table__sort-button_type_reverse');
+    } else {
+        className.classList.remove('table__sort-button_type_reverse');
+    }
+}
+
+function sortTable(columnIndex, isNumeric, sortOrder) {
+    const tBody = document.querySelector('.table__body');
+    const rows = Array.from(tBody.querySelectorAll('.table__row'));
+
+    const sortedRows = rows.sort((a, b) => {
+        const aContent = a.querySelectorAll('.table__item')[columnIndex].textContent;
+        const bContent = b.querySelectorAll('.table__item')[columnIndex].textContent;
+        let result;
+        if (isNumeric) {
+            result = Number(aContent) - Number(bContent);
+        } else {
+            result = aContent.localeCompare(bContent);
+        }
+        return sortOrder === 'desc' ? -result : result;
+    });
+  
+    tBody.innerHTML = '';
+    sortedRows.forEach(row => {
+      tBody.appendChild(row);
+    });
+
+    if (order === 'asc') {
+        order = 'desc'
+    } else if (order === 'desc') {
+        order = 'asc'
+    }
+  }
