@@ -90,3 +90,23 @@ function sortTable(columnIndex, isNumeric, sortOrder) {
         order = 'asc'
     }
   }
+
+//   function filterTable() {
+//     const input = document.querySelector('#searchBar');
+//     const filterText = input.value.trim().toLowerCase();
+//     const tbody = document.querySelector('#tbody');
+//     const rows = Array.from(tbody.querySelectorAll('tr'));
+    
+//     rows.forEach(row => {
+//       const userIdText = row.querySelector('td:nth-child(1)').textContent.trim().toLowerCase();
+//       const idText = row.querySelector('td:nth-child(2)').textContent.trim().toLowerCase();
+//       const titleText = row.querySelector('td:nth-child(3)').textContent.trim().toLowerCase();
+//       const bodyText = row.querySelector('td:nth-child(4)').textContent.trim().toLowerCase();
+      
+//       if (userIdText.includes(filterText) || idText.includes(filterText) || titleText.includes(filterText) || bodyText.includes(filterText)) {
+//         row.style.display = '';
+//       } else {
+//         row.style.display = 'none';
+//       }
+//     });
+//   }
