@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become partner Form</title>
+  </head>
+  <body>
+    <div class="page">
+      <div>
+        <form class="search">
+            <input
+                class="search__input"
+                type="text"
+                id="search"
+            />
+            <button class="search__button">&#128269;</button>
+        </form>
+      </div>
+
+      <table class="table">
+          <thead class="table__head">
+              <tr>
+                  <th class="table__head-item_type_userId">UserId<button class="table__sort-button table__sort-button_type_userId">&#709;</button></th>
+                  <th class="table__head-item_type_title">Title<button class="table__sort-button table__sort-button_type_title">&#709;</button></th>
+                  <th class="table__head-item_type_body">Body<button class="table__sort-button table__sort-button_type_body">&#709;</button></th>
+              </tr>
+          </thead>
+          <tbody class="table__body"></tbody>
+      </table>
+
+      <template id="row-template" class="row-template">
+          <tr class="table__row">
+              <td class="table__item table__item_type_user"></td>
+              <td class="table__item table__item_type_title"></td>
+              <td class="table__item table__item_type_body"></td>
+          </tr>
+      </template>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>

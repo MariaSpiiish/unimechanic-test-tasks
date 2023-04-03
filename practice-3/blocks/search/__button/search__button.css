@@ -1,0 +1,7 @@
+.search__button {
+    border-radius: 0 5px 5px 0;
+    background-color: #CCC;
+    border: none;
+    height: 23.8px;
+    cursor: pointer;
+}

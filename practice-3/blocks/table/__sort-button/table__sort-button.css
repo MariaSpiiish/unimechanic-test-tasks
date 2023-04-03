@@ -1,0 +1,15 @@
+.table__sort-button {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    margin: 0;
+    line-height: 1;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.05s ease-out;
+  }
+  
+.table__sort-button_type_reverse {
+  transform: rotate(180deg);
+}
