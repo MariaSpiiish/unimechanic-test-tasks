@@ -9,6 +9,14 @@ const api = new Api({
 const rowTemplate = '.row-template';
 const rowsContainer = '.table__body';
 
+const userIdButton = document.querySelector('.table__sort-button_type_userId');
+const titleButton = document.querySelector('.table__sort-button_type_title');
+const bodyButton = document.querySelector('.table__sort-button_type_body');
+
+const searchInput = document.getElementById('search');
+
+let order = "asc";
+
 const addNewRow = (data) => {
     const row = new TableRow ({
         data: data,
@@ -33,35 +41,6 @@ api.getInfo()
     .catch((err) => {
         console.log(`Ошибка загрузки данных: ${err}`);
     });
-
-const userIdButton = document.querySelector('.table__sort-button_type_userId');
-const titleButton = document.querySelector('.table__sort-button_type_title');
-const bodyButton = document.querySelector('.table__sort-button_type_body');
-
-let order = "asc";
-
-function toggleSortBtn(className) {
-    if (order === 'asc') {
-        className.classList.add('table__sort-button_type_reverse');
-    } else {
-        className.classList.remove('table__sort-button_type_reverse');
-    }
-}
-
-userIdButton.addEventListener('click', () => {
-    sortTable(0, true, order);
-    toggleSortBtn(userIdButton);
-});
-
-titleButton.addEventListener('click', () => {
-    sortTable(1, false, order);
-    toggleSortBtn(titleButton);
-});
-
-bodyButton.addEventListener('click', () => {
-    sortTable(2, false, order);
-    toggleSortBtn(bodyButton);
-});
 
 function sortTable(columnIndex, isNumeric, sortOrder) {
     const tBody = document.querySelector('.table__body');
@@ -89,24 +68,45 @@ function sortTable(columnIndex, isNumeric, sortOrder) {
     } else if (order === 'desc') {
         order = 'asc'
     }
-  }
+}
 
-//   function filterTable() {
-//     const input = document.querySelector('#searchBar');
-//     const filterText = input.value.trim().toLowerCase();
-//     const tbody = document.querySelector('#tbody');
-//     const rows = Array.from(tbody.querySelectorAll('tr'));
-    
-//     rows.forEach(row => {
-//       const userIdText = row.querySelector('td:nth-child(1)').textContent.trim().toLowerCase();
-//       const idText = row.querySelector('td:nth-child(2)').textContent.trim().toLowerCase();
-//       const titleText = row.querySelector('td:nth-child(3)').textContent.trim().toLowerCase();
-//       const bodyText = row.querySelector('td:nth-child(4)').textContent.trim().toLowerCase();
-      
-//       if (userIdText.includes(filterText) || idText.includes(filterText) || titleText.includes(filterText) || bodyText.includes(filterText)) {
-//         row.style.display = '';
-//       } else {
-//         row.style.display = 'none';
-//       }
-//     });
-//   }
+function toggleSortBtn(className) {
+    if (order === 'asc') {
+        className.classList.add('table__sort-button_type_reverse');
+    } else {
+        className.classList.remove('table__sort-button_type_reverse');
+    }
+}
+
+userIdButton.addEventListener('click', () => {
+    sortTable(0, true, order);
+    toggleSortBtn(userIdButton);
+});
+
+titleButton.addEventListener('click', () => {
+    sortTable(1, false, order);
+    toggleSortBtn(titleButton);
+});
+
+bodyButton.addEventListener('click', () => {
+    sortTable(2, false, order);
+    toggleSortBtn(bodyButton);
+});
+
+searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+
+    const tBody = document.querySelector('.table__body');
+    const rows = Array.from(tBody.querySelectorAll('.table__row'));
+
+    rows.forEach(item => {
+        const isVisible = item.innerText.toLowerCase().includes(value);
+
+        if (value.length > 3 && !isVisible) {
+            item.classList.add("hide");
+        } else {
+            item.classList.remove("hide");
+        }
+        
+      })
+})
